@@ -1,0 +1,67 @@
+{
+  "name": {
+    "en": "TripleSolar Heat Pump",
+    "nl": "TripleSolar Warmtepomp"
+  },
+  "class": "heater",
+  "capabilities": [
+    "measure_temperature",
+    "onoff.boiler"
+  ],
+  "capabilitiesOptions": {
+    "onoff.boiler": {
+      "title": {
+        "en": "Boiler mode",
+        "nl": "Boiler modus"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "cloud"
+  ],
+  "images": {
+    "small": "/drivers/triplesolar/assets/images/small.png",
+    "large": "/drivers/triplesolar/assets/images/large.png",
+    "xlarge": "/drivers/triplesolar/assets/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "login_credentials",
+      "template": "login_credentials",
+      "options": {
+        "title": {
+          "en": "Enter your TripleSolar credentials",
+          "nl": "Voer je TripleSolar inloggegevens in"
+        },
+        "usernameLabel": {
+          "en": "E-mail",
+          "nl": "E-mail"
+        },
+        "passwordLabel": {
+          "en": "Password",
+          "nl": "Wachtwoord"
+        }
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "energy": {
+    "approximation": {
+      "usageOff": 5,
+      "usageOn": 1000
+    }
+  }
+}

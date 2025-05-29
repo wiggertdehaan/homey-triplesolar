@@ -1,0 +1,166 @@
+{
+  "id": "nl.wiggert.triplesolar",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "TripleSolar",
+    "nl": "TripleSolar"
+  },
+  "description": {
+    "en": "Optimize your energy bill by scheduling your TripleSolar",
+    "nl": "Voegt ondersteuning toe voor TripleSolar warmtepompen"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [
+    "homey:manager:api",
+    "homey:app:internet"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Wiggert de Haan",
+    "email": "wiggert@wiggert.nl"
+  },
+  "brandColor": "#d84f01",
+  "flow": {
+    "triggers": [
+      {
+        "id": "boiler_mode_changed",
+        "title": {
+          "en": "Boiler mode changed",
+          "nl": "Boiler modus veranderd"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=triplesolar"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "boiler_mode",
+            "type": "boolean",
+            "title": {
+              "en": "Boiler mode",
+              "nl": "Boiler modus"
+            }
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "is_boiler_mode",
+        "title": {
+          "en": "Boiler mode !{{is|isn't}} active",
+          "nl": "Boiler modus !{{is|isn't}} actief"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=triplesolar"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "set_boiler_mode",
+        "title": {
+          "en": "Turn boiler mode !{{on|off}}",
+          "nl": "Zet boiler modus !{{aan|uit}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=triplesolar"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "TripleSolar Heat Pump",
+        "nl": "TripleSolar Warmtepomp"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_power",
+        "onoff.boiler",
+        "measure_temperature.boiler"
+      ],
+      "capabilitiesOptions": {
+        "onoff.boiler": {
+          "title": {
+            "en": "Boiler mode",
+            "nl": "Boiler modus"
+          }
+        },
+        "measure_temperature.boiler": {
+          "title": {
+            "en": "Boiler temperature",
+            "nl": "Boiler temperatuur"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/triplesolar/assets/images/small.png",
+        "large": "/drivers/triplesolar/assets/images/large.png",
+        "xlarge": "/drivers/triplesolar/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Enter your TripleSolar credentials",
+              "nl": "Voer je TripleSolar inloggegevens in"
+            },
+            "usernameLabel": {
+              "en": "E-mail",
+              "nl": "E-mail"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "title": {
+    "en": "Turn boiler heating on or off",
+    "nl": "Zet boiler verwarming aan of uit"
+  },
+  "hint": {
+    "en": "This action turns the boiler heating mode on (AUTO) or off",
+    "nl": "Deze actie zet de boiler verwarmingsmodus aan (AUTO) of uit"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=triplesolar"
+    },
+    {
+      "name": "mode",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "nl": "Aan"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        }
+      ]
+    }
+  ]
+} 

@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Boiler heating is !{{on|off}}",
+    "nl": "Boiler verwarming is !{{aan|uit}}"
+  },
+  "hint": {
+    "en": "Checks if the boiler heating mode is on or off",
+    "nl": "Controleert of de boiler verwarmingsmodus aan of uit is"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=triplesolar"
+    }
+  ]
+} 

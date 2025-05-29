@@ -1,0 +1,28 @@
+{
+  "title": {
+    "en": "Boiler heating turned !{{on|off}}",
+    "nl": "Boiler verwarming !{{aan|uit}} gezet"
+  },
+  "hint": {
+    "en": "Triggered when the boiler heating mode changes",
+    "nl": "Wordt geactiveerd wanneer de boiler verwarmingsmodus verandert"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=triplesolar"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "boiler_mode",
+      "type": "boolean",
+      "title": {
+        "en": "Boiler mode",
+        "nl": "Boiler modus"
+      },
+      "example": true
+    }
+  ]
+} 
