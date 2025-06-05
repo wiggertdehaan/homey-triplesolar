@@ -34,7 +34,12 @@
   "flow": {
     "triggers": [
       {
+        
         "title": {
+          "en": "Changed boiler mode",
+          "nl": "Boiler modus veranderd"
+        },
+        "titleFormatted": {
           "en": "Boiler heating turned !{{on|off}}",
           "nl": "Boiler verwarming !{{aan|uit}} gezet"
         },
@@ -69,6 +74,10 @@
           "en": "Boiler heating is !{{on|off}}",
           "nl": "Boiler verwarming is !{{aan|uit}}"
         },
+        "titleFormatted": {
+          "en": "Boiler heating is !{{on|off}}",
+          "nl": "Boiler verwarming is !{{aan|uit}}"
+        },
         "hint": {
           "en": "Checks if the boiler heating mode is on or off",
           "nl": "Controleert of de boiler verwarmingsmodus aan of uit is"
@@ -88,6 +97,10 @@
         "title": {
           "en": "Turn boiler heating on or off",
           "nl": "Zet boiler verwarming aan of uit"
+        },
+        "titleFormatted": {
+          "en": "Turn boiler heating !{{on|off}}",
+          "nl": "Zet boiler verwarming !{{aan|uit}}"
         },
         "hint": {
           "en": "This action turns the boiler heating mode on (AUTO) or off",
