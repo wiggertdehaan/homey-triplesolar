@@ -19,6 +19,7 @@
     "climate"
   ],
   "permissions": [
+    "homey:manager:api",
     "homey:app:internet"
   ],
   "images": {
